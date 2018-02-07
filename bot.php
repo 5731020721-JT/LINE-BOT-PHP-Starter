@@ -29,17 +29,17 @@ if (!is_null($events['events'])) {
 				'messages' => [$messages],
 			];
 			
-			
+			if($text == 'confirm'){
 			// try button
-			$actions = array (
-				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("yes", "ans=y"),
-				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("no", "ans=N")
-			);
-			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder("confim message", $actions);
-			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("confim message", $button);
-			$response = $bot->replyMessage($event->getReplyToken(), $outputText);
+				$actions = array (
+					New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("yes", "ans=y"),
+					New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("no", "ans=N")
+				);
+				$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder("confirm message", $actions);
+				$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("confirm message", $button);
+				$response = $bot->replyMessage($event->getReplyToken(), $outputText);
 			//
-			
+			}
 			
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -57,4 +57,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK1";
+echo "OK2";

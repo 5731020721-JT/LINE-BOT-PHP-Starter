@@ -25,33 +25,18 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันคือตัวช่วยในการติดตามคนหาย";
-}else if($arrJson['events'][0]['message']['text'] == "เมนู"){ 
+}else if($arrJson['events'][0]['message']['text'] == "เมนู"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['template'][0]['type'] = "carousel";
-  $arrPostData['template'][0]['columns']['thumbnailImageUrl'] = "https://ibb.co/ejf3rH" ;
-  $arrPostData['template'][0]['columns']['imageBackgroundColor'] = "#FFFFFF";
-  $arrPostData['template'][0]['columns']['titile'] = "Menu";
-  $arrPostData['template'][0]['columns']['text'] = "ฟังก์ชั่นการใช้งาน";
-  $arrPostData['template'][0]['columns']['action']['type'] = "postback";
-  $arrPostData['template'][0]['columns']['action']['lable'] = "1";
-  $arrPostData['template'][0]['columns']['action']['data'] = "action=1&itemid=111";
-  $arrPostData['template'][0]['columns']['action']['type'] = "postback";
-  $arrPostData['template'][0]['columns']['action']['lable'] = "2";
-  $arrPostData['template'][0]['columns']['action']['data'] = "action=1&itemid=111";  
-  $arrPostData['template'][0]['columns']['action']['type'] = "uri";
-  $arrPostData['template'][0]['columns']['action']['lable'] = "3";
-  $arrPostData['template'][0]['columns']['action']['data'] = "https://imgbb.com/";
-  
-  //$arrPostData['messages'][0]['text'] = "คุณสามารถกดหมายเลขต่างๆ เพื่อเข้าถึงเมนู ดังนี้ 1.ข่าวสาร  2.แจ้งเบาะแส  3.แจ้งคนหาย  4.ขอตำแหน่ง  5.ประกาศคนหาย  6.ลงทะเบียน";
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "คุณสามารถกดหมายเลขต่างๆ เพื่อเข้าถึงเมนู ดังนี้ 1.ข่าวสาร  2.แจ้งเบาะแส  3.แจ้งคนหาย  4.ขอตำแหน่ง  5.ประกาศคนหาย  6.ลงทะเบียน";
 }else if($arrJson['events'][0]['message']['text'] == "1"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "location";
-  $arrPostData['messages'][0]['title'] = "คุณกำลังอยู่ที่...";
-  $arrPostData['messages'][0]['address'] = "Chulalongkorn university";
-  $arrPostData['messages'][0]['latitude'] = 13.738378;
-  $arrPostData['messages'][0]['longitude'] = 100.532053;
+  $arrPostData['messages'][0]['type'] = "uri";
+  $arrPostData['messages'][0]['lable'] = "ข่าวสาร คนหาย";
+  $arrPostData['messages'][0]['uri'] = "http://web.backtohome.org/index.php?width=1536&height=864";
+  
 }else if($arrJson['events'][0]['message']['text'] == "2"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -111,4 +96,4 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
 
-echo "OK3";
+echo "OK2";

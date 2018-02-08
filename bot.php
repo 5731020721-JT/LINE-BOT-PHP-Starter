@@ -30,6 +30,14 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "คุณสามารถกดหมายเลขต่างๆ เพื่อเข้าถึงเมนู ดังนี้ 1.ข่าวสาร  2.แจ้งเบาะแส  3.แจ้งคนหาย  4.ขอตำแหน่ง  5.ประกาศคนหาย  6.ลงทะเบียน";
+}else if($arrJson['events'][0]['message']['text'] == "1"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "location";
+  $arrPostData['messages'][0]['title'] = "คุณยายกำลังอยู่ที่...";
+  $arrPostData['messages'][0]['address'] = "Siam Paragon";
+  $arrPostData['messages'][0]['latitude'] = 35.65910807942215;
+  $arrPostData['messages'][0]['longitude'] = 139.70372892916203;
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -49,4 +57,4 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
 
-echo "OK";
+echo "OK3";

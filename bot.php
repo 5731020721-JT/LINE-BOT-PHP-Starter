@@ -33,26 +33,18 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 }else if($arrJson['events'][0]['message']['text'] == "1"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['actions'][0]['type'] = "uri";
-  $arrPostData['actions'][0]['lable'] = "ข่าวสาร คนหาย";
-  $arrPostData['actions'][0]['uri'] = "http://web.backtohome.org/index.php?width=1536&height=864";
-  
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "coming soon";
 }else if($arrJson['events'][0]['message']['text'] == "2"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "location";
-  $arrPostData['messages'][0]['title'] = "คุณกำลังอยู่ที่...";
-  $arrPostData['messages'][0]['address'] = "Chulalongkorn university";
-  $arrPostData['messages'][0]['latitude'] = 13.738378;
-  $arrPostData['messages'][0]['longitude'] = 100.532053;
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "ในขณะนี้ คุณสามารถแจ้งเบาะแสคนหายได้ที่ https://www.facebook.com/Thaimissing/";
 }else if($arrJson['events'][0]['message']['text'] == "3"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "location";
-  $arrPostData['messages'][0]['title'] = "คุณกำลังอยู่ที่...";
-  $arrPostData['messages'][0]['address'] = "Chulalongkorn university";
-  $arrPostData['messages'][0]['latitude'] = 13.738378;
-  $arrPostData['messages'][0]['longitude'] = 100.532053;
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "ในขณะนี้ คุณสามารถแจ้งคนหายได้ที่ https://www.facebook.com/Thaimissing/";
 }else if($arrJson['events'][0]['message']['text'] == "4"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -62,21 +54,15 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['latitude'] = 13.738378;
   $arrPostData['messages'][0]['longitude'] = 100.532053;
 }else if($arrJson['events'][0]['message']['text'] == "5"){
-  $arrPostData = array();
+   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "location";
-  $arrPostData['messages'][0]['title'] = "คุณกำลังอยู่ที่...";
-  $arrPostData['messages'][0]['address'] = "Chulalongkorn university";
-  $arrPostData['messages'][0]['latitude'] = 13.738378;
-  $arrPostData['messages'][0]['longitude'] = 100.532053;
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "สามารถตรวจสอบประกาศคนหายได้ที่ http://web.backtohome.org/net%20missing.php?width=1536&height=864";
 }else if($arrJson['events'][0]['message']['text'] == "6"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "location";
-  $arrPostData['messages'][0]['title'] = "คุณกำลังอยู่ที่...";
-  $arrPostData['messages'][0]['address'] = "Chulalongkorn university";
-  $arrPostData['messages'][0]['latitude'] = 13.738378;
-  $arrPostData['messages'][0]['longitude'] = 100.532053;
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "ลงทะเบียน";
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -96,4 +82,4 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
 
-echo "OK1";
+echo "OK";

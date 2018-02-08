@@ -33,9 +33,9 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 }else if($arrJson['events'][0]['message']['text'] == "1"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "uri";
-  $arrPostData['messages'][0]['lable'] = "ข่าวสาร คนหาย";
-  $arrPostData['messages'][0]['uri'] = "http://web.backtohome.org/index.php?width=1536&height=864";
+  $arrPostData['action'][0]['type'] = "uri";
+  $arrPostData['action'][0]['lable'] = "ข่าวสาร คนหาย";
+  $arrPostData['action'][0]['uri'] = "http://web.backtohome.org/index.php?width=1536&height=864";
   
 }else if($arrJson['events'][0]['message']['text'] == "2"){
   $arrPostData = array();
@@ -96,4 +96,4 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
 
-echo "OK2";
+echo "OK3";

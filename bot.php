@@ -29,23 +29,23 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "คุณสามารถกดหมายเลขต่างๆ เพื่อเข้าถึงเมนู ดังนี้ 1.ข่าวสาร  2.แจ้งเบาะแส  3.แจ้งคนหาย  4.ขอตำแหน่ง  5.ประกาศคนหาย  6.ลงทะเบียน";
-}else if($arrJson['events'][0]['message']['text'] == "1"){
+  $arrPostData['messages'][0]['text'] = "คุณสามารถพิมพ์คำสั่ง เพื่อเข้าถึงเมนู ได้ดังนี้ 1.ข่าวสาร  2.แจ้งเบาะแส  3.แจ้งคนหาย  4.ขอตำแหน่ง  5.ประกาศคนหาย  6.ลงทะเบียน";
+}else if($arrJson['events'][0]['message']['text'] == "ข่าวสาร"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "coming soon";
-}else if($arrJson['events'][0]['message']['text'] == "2"){
+}else if($arrJson['events'][0]['message']['text'] == "แจ้งเบาะแส"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ในขณะนี้ คุณสามารถแจ้งเบาะแสคนหายได้ที่ https://www.facebook.com/Thaimissing/";
-}else if($arrJson['events'][0]['message']['text'] == "3"){
+}else if($arrJson['events'][0]['message']['text'] == "แจ้งคนหาย"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ในขณะนี้ คุณสามารถแจ้งคนหายได้ที่ https://www.facebook.com/Thaimissing/";
-}else if($arrJson['events'][0]['message']['text'] == "4"){
+}else if($arrJson['events'][0]['message']['text'] == "ขอตำแหน่ง"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "location";
@@ -53,12 +53,12 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['address'] = "Chulalongkorn university";
   $arrPostData['messages'][0]['latitude'] = 13.738378;
   $arrPostData['messages'][0]['longitude'] = 100.532053;
-}else if($arrJson['events'][0]['message']['text'] == "5"){
+}else if($arrJson['events'][0]['message']['text'] == "ประกาศคนหาย"){
    $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "สามารถตรวจสอบประกาศคนหายได้ที่ http://web.backtohome.org/net%20missing.php?width=1536&height=864";
-}else if($arrJson['events'][0]['message']['text'] == "6"){
+}else if($arrJson['events'][0]['message']['text'] == "ลงทะเบียน"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
@@ -82,4 +82,4 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
 
-echo "OK";
+echo "OK3";

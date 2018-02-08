@@ -25,11 +25,16 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันคือตัวช่วยในการติดตามคนหาย";
+}else if($arrJson['events'][0]['message']['text'] == "เมนู"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "คุณสามารถกดหมายเลขต่างๆ เพื่อเข้าถึงเมนู ดังนี้ 1.ข่าวสาร  2.แจ้งเบาะแส  3.แจ้งคนหาย  4.ขอตำแหน่ง  5.ประกาศคนหาย  6.ลงทะเบียน";
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจ";
+  $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจ คุณสามารถพิมพ์ เมนู เพื่อดูฟังก์ชันการใช้งานของฉัน";
 }
  
  
@@ -44,4 +49,4 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
 
-echo "OK3";
+echo "OK";

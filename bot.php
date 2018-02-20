@@ -29,7 +29,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "คุณสามารถพิมพ์คำสั่ง เพื่อเข้าถึงเมนู ได้ดังนี้ 1.ข่าวสาร  2.แจ้งเบาะแส  3.แจ้งคนหาย  4.ขอตำแหน่ง  5.ประกาศคนหาย  6.ลงทะเบียนผู้สูงอายุ";
+  $arrPostData['messages'][0]['text'] = "คุณสามารถพิมพ์คำสั่ง เพื่อเข้าถึงเมนู ได้ดังนี้ 1.ข่าวสาร  2.แจ้งเบาะแส  3.แจ้งคนหาย  4.ขอทราบตำแหน่งบุคคลที่ดูแล  5.ประกาศคนหาย  6.ลงทะเบียนผู้สูงอายุ";
 }else if($arrJson['events'][0]['message']['text'] == "ข่าวสาร"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -45,19 +45,19 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ในขณะนี้ คุณสามารถแจ้งคนหายได้ที่ https://www.facebook.com/Thaimissing/";
-}else if($arrJson['events'][0]['message']['text'] == "ขอตำแหน่ง"){
+}else if($arrJson['events'][0]['message']['text'] == "ขอทราบตำแหน่งบุคคลที่ดูแล"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "location";
-  $arrPostData['messages'][0]['title'] = "คุณกำลังอยู่ที่...";
+  $arrPostData['messages'][0]['title'] = "คุณพ่อ กำลังอยู่ที่...";
   $arrPostData['messages'][0]['address'] = "Chulalongkorn university";
   $arrPostData['messages'][0]['latitude'] = 13.738378;
   $arrPostData['messages'][0]['longitude'] = 100.532053;
-}else if($arrJson['events'][0]['message']['text'] == "ประกาศคนหาย"){
+}else if($arrJson['events'][0]['message']['text'] == "รายชื่อคนหาย"){
    $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "สามารถตรวจสอบประกาศคนหายได้ที่ http://web.backtohome.org/net%20missing.php?width=1536&height=864";
+  $arrPostData['messages'][0]['text'] = "ในขณะนี้ คุณสามารถตรวจสอบประกาศคนหายได้ที่ http://web.backtohome.org/net%20missing.php?width=1536&height=864";
 }else if($arrJson['events'][0]['message']['text'] == "ลงทะเบียนผู้สูงอายุ"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];

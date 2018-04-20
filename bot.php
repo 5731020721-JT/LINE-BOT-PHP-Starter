@@ -34,7 +34,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "http://tamroyfinding.blogspot.com";
+  $arrPostData['messages'][0]['text'] = "คุณสามารถติดตามข่าวสารได้ที่ http://tamroyfinding.blogspot.com";
 }else if($arrJson['events'][0]['message']['text'] == "แจ้งเบาะแส"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];

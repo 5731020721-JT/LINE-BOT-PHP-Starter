@@ -57,7 +57,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ลงทะเบียน";
+  $arrPostData['messages'][0]['text'] = "คุณสามารถลงทะเบียนได้ที่ https://goo.gl/forms/oc6Ma5vyVrSEsx292";
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];

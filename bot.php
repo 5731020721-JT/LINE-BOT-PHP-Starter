@@ -39,12 +39,12 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "คุณสามารถแจ้งเบาะแสคนหายได้ที่ https://drive.google.com/open?id=1ULClK3VI4T3mnSABGSURvh70230KuEoi7Awuycz6_6E ";
+  $arrPostData['messages'][0]['text'] = "คุณสามารถแจ้งเบาะแสคนหายได้ที่ https://goo.gl/forms/xcdNJtE7sqCmF0Ts2 ";
 }else if($arrJson['events'][0]['message']['text'] == "แจ้งคนหาย"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "คุณสามารถแจ้งคนหายได้ที่ https://drive.google.com/open?id=1K1FzTMBJNob9AXKIi6k9gBYzLMoG-va9Nh1ACyVBiKc";
+  $arrPostData['messages'][0]['text'] = "คุณสามารถแจ้งคนหายได้ที่ https://goo.gl/forms/NFbpdz7hhfk0bVHi1";
 }else if($arrJson['events'][0]['message']['text'] == "ขอทราบตำแหน่งบุคคลที่ดูแล"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
